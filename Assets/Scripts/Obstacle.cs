@@ -27,7 +27,7 @@ public class Obstacles : MonoBehaviour
         // add mass in relation to size, and add an initial force
         Rigidbody2D ObsacleRB = GetComponent<Rigidbody2D>();
         ObsacleRB.mass = Convert.ToSingle(Math.Pow(RandomScale / 2, 2) * 5.196);
-        ObsacleRB.AddForce(new Vector2(UnityEngine.Random.Range(-ForceRange, ForceRange), UnityEngine.Random.Range(-ForceRange, ForceRange)));
+        ObsacleRB.AddForce(UnityEngine.Random.insideUnitCircle * UnityEngine.Random.Range(-ForceRange, ForceRange));
 
         transform.Rotate(new Vector3(0, 0, UnityEngine.Random.Range(0, 60)));
 
